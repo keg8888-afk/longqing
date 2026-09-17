@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a2540">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a2540'/%3E%3Cpath d='M32 12 52 36H41v16H23V36H12Z' fill='%2300d4aa'/%3E%3C/svg%3E">
 <title>Каталог продукции Longqing | ООО "ВИРА"</title>
    <!-- Верификация в Яндекс.Вебмастере -->
   <meta name="yandex-verification" content="86e6a93721685a74" />
@@ -25,13 +27,13 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="ООО «ВИРА»">
-<meta property="og:title" content="Каталог продукции Longqing | ООО "ВИРА"">
+<meta property="og:title" content="Каталог продукции Longqing | ООО «ВИРА»">
 <meta property="og:description" content="Официальный каталог подъёмных платформ Shandong Longqing Heavy Industry: коленчатые, телескопические, ножничные, гусеничные, мачтовые подъёмники и электрические мини-погрузчики. Технические характеристики, сертификация CE/EAC, системы безопасности. ООО «ВИРА» — официальный представитель в РФ. Тел. +7 (423) 256-47-21, Владивосток.">
 <meta property="og:url" content="https://longqing.ru/">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Каталог продукции Longqing | ООО "ВИРА"">
+<meta name="twitter:title" content="Каталог продукции Longqing | ООО «ВИРА»">
 <meta name="twitter:description" content="Официальный каталог подъёмных платформ Shandong Longqing Heavy Industry: коленчатые, телескопические, ножничные, гусеничные, мачтовые подъёмники и электрические мини-погрузчики. Технические характеристики, сертификация CE/EAC, системы безопасности. ООО «ВИРА» — официальный представитель в РФ. Тел. +7 (423) 256-47-21, Владивосток.">
 
 <!-- Canonical -->
@@ -57,6 +59,7 @@
 <style>
 :root {
   --primary: #0a2540;
+  --primary-2: #0d3b66;
   --accent: #00d4aa;
   --accent-dark: #00b894;
   --bg: #f6f9fc;
@@ -66,9 +69,12 @@
   --border: #e1e8ed;
   --shadow: 0 10px 40px rgba(10,37,64,0.08);
   --shadow-hover: 0 20px 60px rgba(10,37,64,0.12);
+  --grad-accent: linear-gradient(135deg, #00d4aa 0%, #00b894 100%);
+  --nav-h: 70px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   background: var(--bg);
@@ -76,90 +82,168 @@ body {
   line-height: 1.6;
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+img { max-width: 100%; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-/* Header */
+/* ===== Hero ===== */
 header {
-  background: linear-gradient(135deg, var(--primary) 0%, #0d3b66 100%);
-  color: white;
-  padding: 40px 0 60px;
   position: relative;
+  color: white;
+  padding: 84px 0 68px;
   overflow: hidden;
+  background: var(--primary);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('images/K2.jpg') 68% 55% / cover no-repeat;
+  opacity: 0.38;
 }
 header::before {
   content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(115deg, rgba(10,37,64,0.97) 0%, rgba(10,37,64,0.86) 52%, rgba(13,59,102,0.6) 100%);
+}
+header::after {
+  content: '';
   position: absolute;
-  top: -50%; right: -10%;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(0,212,170,0.15) 0%, transparent 70%);
+  top: -42%; right: -12%;
+  width: 640px; height: 640px;
+  background: radial-gradient(circle, rgba(0,212,170,0.3) 0%, transparent 70%);
   border-radius: 50%;
 }
 .header-content { position: relative; z-index: 1; }
 .badge {
   display: inline-block;
-  background: rgba(0,212,170,0.2);
+  background: rgba(0,212,170,0.18);
   color: var(--accent);
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 16px;
-  border: 1px solid rgba(0,212,170,0.3);
+  margin-bottom: 18px;
+  border: 1px solid rgba(0,212,170,0.35);
+  letter-spacing: 0.02em;
 }
-h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
-.subtitle { font-size: 1.15rem; opacity: 0.9; max-width: 700px; }
+h1 { font-size: clamp(2.1rem, 4.4vw, 3rem); font-weight: 800; margin-bottom: 14px; line-height: 1.15; letter-spacing: -0.02em; max-width: 840px; }
+.subtitle { font-size: 1.13rem; opacity: 0.92; max-width: 730px; }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 14px;
+  margin: 30px 0 6px;
+  max-width: 880px;
+}
+.stat {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 14px 18px;
+}
+.stat strong { display: block; font-size: 1.45rem; font-weight: 800; color: var(--accent); line-height: 1.25; white-space: nowrap; }
+.stat span { font-size: 0.85rem; opacity: 0.85; }
+
 .rep-info {
-  margin-top: 28px;
+  margin-top: 18px;
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 16px;
-  padding: 20px 24px;
+  padding: 18px 24px;
   display: inline-flex;
   flex-direction: column;
   gap: 8px;
 }
-.rep-info strong { color: var(--accent); font-size: 1.1rem; }
-.rep-info span { font-size: 0.95rem; opacity: 0.9; }
+.rep-info strong { color: var(--accent); font-size: 1.05rem; }
+.rep-info a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.97rem; display: inline-flex; align-items: center; gap: 9px; transition: color .2s; }
+.rep-info a:hover { color: var(--accent); }
+.rep-info .ico { flex: none; color: var(--accent); }
 
-/* Sticky Nav */
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+/* ===== Sticky nav ===== */
 nav {
-  background: var(--card);
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 20px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--border);
+  transition: box-shadow .25s;
 }
+nav.scrolled { box-shadow: 0 8px 28px rgba(10,37,64,0.14); }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 16px; }
+.nav-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; color: var(--primary); text-decoration: none; font-size: 0.95rem; white-space: nowrap; flex: none; order: 1; margin: 8px 0; max-height: 60px; transition: max-height .3s ease, opacity .25s ease, margin .3s ease; }
+.brand-mark {
+  width: 36px; height: 36px; flex: none;
+  border-radius: 10px;
+  background: var(--grad-accent);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,184,148,0.35);
+}
+.brand-mark .ico { color: #fff; }
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
   display: flex;
-  gap: 8px;
+  gap: 1px;
   overflow-x: auto;
   scrollbar-width: none;
+  flex: 1 0 100%;
+  min-width: 0;
+  order: 3;
 }
 .nav-container::-webkit-scrollbar { display: none; }
 .nav-container a {
-  padding: 16px 14px;
+  padding: 19px 10px;
   text-decoration: none;
   color: var(--text-light);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   white-space: nowrap;
   border-bottom: 3px solid transparent;
-  transition: all 0.2s;
+  transition: color 0.2s, border-color 0.2s;
 }
 .nav-container a:hover, .nav-container a.active {
   color: var(--accent-dark);
   border-bottom-color: var(--accent);
 }
-
-/* Sections */
-.section {
-  padding: 60px 0;
+.nav-phone {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--grad-accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+  flex: none;
+  order: 2;
+  margin: 8px 0 8px auto;
+  max-height: 60px;
+  box-shadow: 0 4px 14px rgba(0,184,148,0.32);
+  transition: transform .2s, box-shadow .2s, max-height .3s ease, opacity .25s ease, margin .3s ease;
 }
-.section:nth-child(even) { background: white; }
+.nav-phone:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(0,184,148,0.42); }
+.nav-progress { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--grad-accent); border-radius: 0 3px 3px 0; z-index: 2; }
+/* Right-edge fade hint when category row overflows (mobile) */
+.nav-container.can-scroll {
+  -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 34px), transparent 100%);
+          mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 34px), transparent 100%);
+}
+.nav-container.can-scroll.at-end { -webkit-mask-image: none; mask-image: none; }
+/* Condensed nav: brand + phone collapse on scroll, categories stay visible */
+nav.condensed .nav-brand, nav.condensed .nav-phone { max-height: 0; opacity: 0; margin-block: 0; overflow: hidden; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .nav-brand, .nav-phone { transition: none; } }
+
+/* ===== Sections ===== */
+.section { padding: 64px 0; scroll-margin-top: calc(var(--nav-h) + 14px); }
+.section:nth-of-type(even) { background: #fff; }
 .section-header {
   display: flex;
   align-items: flex-end;
@@ -169,43 +253,69 @@ nav {
   gap: 16px;
 }
 .section-num {
-  display: inline-block;
-  background: var(--accent);
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: var(--grad-accent);
   color: white;
-  width: 44px; height: 44px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 18px rgba(0,184,148,0.35);
 }
-h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
-.section-desc { color: var(--text-light); margin-top: 8px; max-width: 700px; }
+h2 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); font-weight: 700; color: var(--primary); letter-spacing: -0.01em; }
+.section-desc { color: var(--text-light); margin-top: 10px; max-width: 760px; }
 
-/* Gallery */
+/* ===== Gallery ===== */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   margin-bottom: 36px;
 }
-.gallery img {
+.shot {
+  position: relative;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: zoom-in;
+  background: #fff;
+}
+.shot img {
   width: 100%;
   height: 260px;
   object-fit: cover;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+  display: block;
+  transition: transform 0.45s ease;
 }
-.gallery img:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+.shot::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10,37,64,0.4));
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
 }
+.shot:hover img, .shot:focus-visible img { transform: scale(1.05); }
+.shot:hover::after, .shot:focus-visible::after { opacity: 1; }
+.shot-zoom {
+  position: absolute; right: 12px; bottom: 12px; z-index: 2;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.94);
+  color: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: translateY(8px);
+  transition: all .3s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+  pointer-events: none;
+}
+.shot:hover .shot-zoom, .shot:focus-visible .shot-zoom { opacity: 1; transform: none; }
 
-/* Features */
+/* ===== Features ===== */
 .features {
   background: linear-gradient(135deg, #f0fdf9 0%, #f6f9fc 100%);
   border: 1px solid var(--border);
@@ -222,15 +332,17 @@ h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
   gap: 10px;
 }
 .features h3::before {
-  content: '✓';
+  content: '\2713';
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 26px; height: 26px;
-  background: var(--accent);
+  background: var(--grad-accent);
   color: white;
   border-radius: 50%;
   font-size: 0.8rem;
+  flex: none;
+  box-shadow: 0 4px 10px rgba(0,184,148,0.3);
 }
 .features ul {
   display: grid;
@@ -240,31 +352,33 @@ h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
 }
 .features li {
   position: relative;
-  padding-left: 20px;
+  padding-left: 27px;
   color: var(--text-light);
   font-size: 0.95rem;
 }
 .features li::before {
-  content: '';
+  content: '\2713';
   position: absolute;
-  left: 0; top: 10px;
-  width: 8px; height: 8px;
-  background: var(--accent);
-  border-radius: 2px;
+  left: 0; top: 3px;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  background: rgba(0,212,170,0.16);
+  color: var(--accent-dark);
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Buttons */
-.btn-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+/* ===== Buttons ===== */
+.btn-group { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  background: var(--primary);
+  gap: 9px;
+  padding: 14px 26px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -274,10 +388,11 @@ h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
   transition: all 0.2s;
   text-decoration: none;
 }
+.btn .ico { flex: none; opacity: 0.92; }
 .btn:hover {
-  background: var(--accent-dark);
+  background: var(--grad-accent);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,212,170,0.3);
+  box-shadow: 0 10px 26px rgba(0,184,148,0.35);
 }
 .btn-outline {
   background: transparent;
@@ -287,10 +402,95 @@ h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
 .btn-outline:hover {
   border-color: var(--accent);
   color: var(--accent-dark);
+  background: rgba(0,212,170,0.06);
   box-shadow: none;
 }
+.btn-accent { background: var(--grad-accent); box-shadow: 0 6px 18px rgba(0,184,148,0.35); }
+.btn-accent:hover { background: var(--grad-accent); filter: brightness(1.06); }
+.btn-ghost { background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.35); color: #fff; }
+.btn-ghost:hover { background: rgba(255,255,255,0.18); border-color: var(--accent); color: #fff; box-shadow: none; }
 
-/* Modal */
+/* ===== FAQ ===== */
+.faq-section { padding: 64px 0; scroll-margin-top: calc(var(--nav-h) + 14px); }
+.faq-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  background: rgba(0,212,170,0.12);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.faq-list { display: grid; gap: 12px; margin-top: 26px; }
+.faq-list details {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  transition: box-shadow .2s, border-color .2s;
+}
+.faq-list details:hover { box-shadow: 0 6px 20px rgba(10,37,64,.08); }
+.faq-list details[open] { border-color: var(--accent); box-shadow: 0 8px 24px rgba(0,184,148,.12); }
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary);
+  list-style: none;
+  position: relative;
+  padding-right: 34px;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: '+';
+  position: absolute;
+  right: 2px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--accent-dark);
+}
+.faq-list details[open] summary::after { content: '\2212'; }
+.faq-list details p { margin: 12px 0 0; color: var(--text-light); line-height: 1.7; }
+
+/* ===== CTA band ===== */
+#contacts {
+  background: linear-gradient(120deg, var(--primary) 0%, var(--primary-2) 100%);
+  color: #fff;
+  padding: 56px 0;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: calc(var(--nav-h) + 14px);
+}
+#contacts::before {
+  content: '';
+  position: absolute;
+  top: -60%; right: -8%;
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(0,212,170,0.26) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.cta-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+.cta-inner h2 { color: #fff; }
+.cta-inner p { opacity: 0.85; max-width: 580px; margin-top: 10px; }
+.cta-actions { display: flex; flex-direction: column; gap: 12px; }
+
+/* ===== Footer ===== */
+footer { background: #071b30; color: rgba(255,255,255,0.75); padding: 56px 0 0; font-size: 0.92rem; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 44px; }
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; color: #fff; font-size: 1.05rem; }
+.footer-about p { line-height: 1.7; opacity: 0.85; }
+footer h4 { color: #fff; font-size: 0.92rem; margin-bottom: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+footer ul { list-style: none; display: grid; gap: 9px; }
+footer a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color .2s; }
+footer a:hover { color: var(--accent); }
+.footer-contact li { display: flex; gap: 10px; align-items: flex-start; }
+.footer-contact .ico { color: var(--accent); flex: none; margin-top: 3px; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding: 18px 0; text-align: center; font-size: 0.85rem; opacity: 0.65; }
+
+/* ===== Modal ===== */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -305,7 +505,7 @@ h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
 .modal-overlay.active { display: flex; align-items: flex-start; justify-content: center; }
 .modal {
   background: white;
-  border-radius: 24px;
+  border-radius: 20px;
   max-width: 1000px;
   width: 100%;
   margin: auto;
@@ -314,12 +514,13 @@ h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
   animation: slideUp 0.3s ease;
 }
 .modal-header {
-  background: var(--primary);
+  background: linear-gradient(120deg, var(--primary) 0%, var(--primary-2) 100%);
   color: white;
   padding: 24px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 .modal-header h3 { font-size: 1.3rem; font-weight: 700; }
 .modal-close {
@@ -332,11 +533,12 @@ h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
   cursor: pointer;
   transition: background 0.2s;
   display: flex; align-items: center; justify-content: center;
+  flex: none;
 }
 .modal-close:hover { background: rgba(255,255,255,0.3); }
 .modal-body { padding: 32px; overflow-x: auto; }
 
-/* Table */
+/* ===== Table ===== */
 .table-wrapper { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
 .spec-table {
   width: 100%;
@@ -370,62 +572,177 @@ h2 { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
 .spec-table tr:nth-child(even) td { background: #fafbfc; }
 .spec-table tr:nth-child(even):hover td { background: #f0f4f8; }
 
-/* Footer */
-footer {
-  background: var(--primary);
-  color: rgba(255,255,255,0.7);
-  padding: 40px 0;
-  text-align: center;
-  font-size: 0.9rem;
+/* ===== Lightbox ===== */
+.lightbox {
+  position: fixed; inset: 0;
+  z-index: 2000;
+  background: rgba(7,20,35,0.93);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 72px;
 }
-footer strong { color: white; }
+.lightbox.open { display: flex; animation: fadeIn 0.2s ease; }
+.lb-figure { margin: 0; max-width: min(1100px, 100%); text-align: center; }
+.lb-figure img {
+  max-width: 100%;
+  max-height: calc(100vh - 170px);
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  animation: slideUp 0.25s ease;
+}
+.lb-figure figcaption { color: rgba(255,255,255,0.85); margin-top: 14px; font-size: 0.95rem; }
+.lb-btn {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+  z-index: 2001;
+}
+.lb-btn:hover { background: rgba(0,212,170,0.45); }
+.lb-prev { left: 20px; }
+.lb-next { right: 20px; }
+.lb-close {
+  position: fixed; top: 18px; right: 22px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+  z-index: 2001;
+}
+.lb-close:hover { background: rgba(255,255,255,0.28); }
+.lb-counter {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.85rem;
+  background: rgba(255,255,255,0.1);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
 
-/* Animations */
+/* ===== Back to top ===== */
+.to-top {
+  position: fixed; right: 22px; bottom: 22px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--grad-accent);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(0,184,148,0.4);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: all 0.25s;
+  z-index: 500;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { filter: brightness(1.07); }
+
+/* ===== Animations ===== */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .js-reveal.is-visible { opacity: 1; transform: none; }
+}
 
-/* Responsive */
+/* ===== Responsive ===== */
+@media (max-width: 400px) {
+  .nav-phone .nav-phone-text { display: none; }
+  .nav-phone { padding: 10px; border-radius: 50%; }
+}
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
+  header { padding: 56px 0 48px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; }
-  .gallery img { height: 180px; }
+  .shot img { height: 180px; }
+  .features { padding: 22px 20px; }
   .features ul { grid-template-columns: 1fr; }
   .modal-body { padding: 20px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .cta-inner { flex-direction: column; align-items: flex-start; }
+  .cta-actions { width: 100%; }
+  .lightbox { padding: 20px 14px; }
+  .lb-prev { left: 8px; }
+  .lb-next { right: 8px; }
+  .nav-brand .brand-text { display: none; }
 }
 @media (max-width: 480px) {
   .gallery { grid-template-columns: 1fr; }
   .btn { width: 100%; justify-content: center; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  .stat strong { font-size: 1.2rem; }
+  .rep-info { width: 100%; }
+}
+
+/* ===== Print ===== */
+@media print {
+  nav, .to-top, .lightbox, .hero-cta, .cta-actions, .shot-zoom, .nav-progress { display: none !important; }
+  header { background: var(--primary) !important; }
+  header::before, header::after, .hero-bg { display: none; }
+  .faq-list details { break-inside: avoid; }
 }
 </style>
 </head>
 <body>
 
 <!-- Header -->
-<header>
+<header id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="container header-content">
     <div class="badge">Официальный каталог 2026</div>
     <h1>Shandong Longqing Heavy Industry Co., Ltd.</h1>
     <p class="subtitle">Высокотехнологичное предприятие, специализирующееся на интеллектуальном экологичном оборудовании для высотных работ. Полный производственный цикл, индивидуальные решения и круглосуточное обслуживание.</p>
+    <div class="hero-stats">
+      <div class="stat"><strong>7</strong><span>линеек техники</span></div>
+      <div class="stat"><strong>35</strong><span>моделей в каталоге</span></div>
+      <div class="stat"><strong>CE · EAC</strong><span>сертификация</span></div>
+      <div class="stat"><strong>18 мес</strong><span>гарантия</span></div>
+    </div>
     <div class="rep-info">
-      <strong>Официальный представитель: ООО "ВИРА"</strong>
-      <span>📞 Тел.: +7(423)256-47-21</span>
-      <span>✉ Email: virare@mail.ru</span>
+      <strong>Официальный представитель в РФ — ООО «ВИРА»</strong>
+      <a href="tel:+74232564721"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +7 (423) 256-47-21</a>
+      <a href="mailto:virare@mail.ru"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg> virare@mail.ru</a>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-accent" href="#catalog"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg> Смотреть каталог</a>
+      <a class="btn btn-ghost" href="tel:+74232564721"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Позвонить</a>
     </div>
   </div>
 </header>
 
 <!-- Navigation -->
-<nav>
-  <div class="nav-container">
-    <a href="#sec01">01 Коленчатые</a>
-    <a href="#sec02">02 Ножничные</a>
-    <a href="#sec03">03 Гусеничные</a>
-    <a href="#sec04">04 Мачтовые</a>
-    <a href="#sec05">05 Трехколесные</a>
-    <a href="#sec06">06 Мини-погрузчики</a>
-    <a href="#sec07">07 Телескопические</a>
+<nav id="catalog">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" aria-label="Наверх, к началу каталога">
+      <span class="brand-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span>
+      <span class="brand-text">ВИРА · Longqing</span>
+    </a>
+    <div class="nav-container">
+      <a href="#sec01">01 Коленчатые</a>
+      <a href="#sec02">02 Ножничные</a>
+      <a href="#sec03">03 Гусеничные</a>
+      <a href="#sec04">04 Мачтовые</a>
+      <a href="#sec05">05 Трехколесные</a>
+      <a href="#sec06">06 Мини-погрузчики</a>
+      <a href="#sec07">07 Телескопические</a>
+    </div>
+    <a class="nav-phone" href="tel:+74232564721" aria-label="Позвонить: +7 (423) 256-47-21"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav-phone-text">+7 (423) 256-47-21</span></a>
   </div>
+  <div class="nav-progress" aria-hidden="true"></div>
 </nav>
 
 <!-- Section 01 -->
@@ -439,10 +756,18 @@ footer strong { color: white; }
       </div>
     </div>
     <div class="gallery">
-      <img src="images/K1.png" alt="Коленчатый подъемник K1" loading="lazy">
-      <img src="images/K2.jpg" alt="Коленчатый подъемник K2" loading="lazy">
-      <img src="images/K3.png" alt="Коленчатый подъемник K3" loading="lazy">
-      <img src="images/K4.jpg" alt="Коленчатый подъемник K4" loading="lazy">
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Коленчатый подъемник K1">
+      <img src="images/K1.png" alt="Коленчатый подъемник K1" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Коленчатый подъемник K2">
+      <img src="images/K2.jpg" alt="Коленчатый подъемник K2" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Коленчатый подъемник K3">
+      <img src="images/K3.png" alt="Коленчатый подъемник K3" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Коленчатый подъемник K4">
+      <img src="images/K4.jpg" alt="Коленчатый подъемник K4" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
     </div>
     <div class="features">
       <h3>Особенности и системы безопасности</h3>
@@ -468,8 +793,8 @@ footer strong { color: white; }
       </ul>
     </div>
     <div class="btn-group">
-      <button class="btn" onclick="openModal('modal-tb16')">📋 Технические характеристики TB16E / TB16EP</button>
-      <button class="btn btn-outline" onclick="openModal('modal-tb11')">📋 Технические характеристики TB11E–TB22E</button>
+      <button class="btn" onclick="openModal('modal-tb16')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Технические характеристики TB16E / TB16EP</button>
+      <button class="btn btn-outline" onclick="openModal('modal-tb11')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Технические характеристики TB11E–TB22E</button>
     </div>
   </div>
 </section>
@@ -485,10 +810,18 @@ footer strong { color: white; }
       </div>
     </div>
     <div class="gallery">
-      <img src="images/S1.jpg" alt="Ножничная платформа S1" loading="lazy">
-      <img src="images/S2.jpg" alt="Ножничная платформа S2" loading="lazy">
-      <img src="images/S3.png" alt="Ножничная платформа S3" loading="lazy">
-      <img src="images/S4.jpg" alt="Ножничная платформа S4" loading="lazy">
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Ножничная платформа S1">
+      <img src="images/S1.jpg" alt="Ножничная платформа S1" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Ножничная платформа S2">
+      <img src="images/S2.jpg" alt="Ножничная платформа S2" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Ножничная платформа S3">
+      <img src="images/S3.png" alt="Ножничная платформа S3" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Ножничная платформа S4">
+      <img src="images/S4.jpg" alt="Ножничная платформа S4" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
     </div>
     <div class="features">
       <h3>Особенности и системы безопасности</h3>
@@ -516,9 +849,9 @@ footer strong { color: white; }
       </ul>
     </div>
     <div class="btn-group">
-      <button class="btn" onclick="openModal('modal-sjw-small')">📋 Характеристики SJW3.5E / SJW4.6E / SJW0606E</button>
-      <button class="btn btn-outline" onclick="openModal('modal-sjw-mid')">📋 Характеристики SJW06E / SJW8E / SJW08BE</button>
-      <button class="btn btn-outline" onclick="openModal('modal-sjw-large')">📋 Характеристики SJW10E / SJW12E / SJW14E</button>
+      <button class="btn" onclick="openModal('modal-sjw-small')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Характеристики SJW3.5E / SJW4.6E / SJW0606E</button>
+      <button class="btn btn-outline" onclick="openModal('modal-sjw-mid')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Характеристики SJW06E / SJW8E / SJW08BE</button>
+      <button class="btn btn-outline" onclick="openModal('modal-sjw-large')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Характеристики SJW10E / SJW12E / SJW14E</button>
     </div>
   </div>
 </section>
@@ -534,9 +867,15 @@ footer strong { color: white; }
       </div>
     </div>
     <div class="gallery">
-      <img src="images/G1.png" alt="Гусеничная платформа G1" loading="lazy">
-      <img src="images/G2.png" alt="Гусеничная платформа G2" loading="lazy">
-      <img src="images/G3.png" alt="Гусеничная платформа G3" loading="lazy">
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Гусеничная платформа G1">
+      <img src="images/G1.png" alt="Гусеничная платформа G1" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Гусеничная платформа G2">
+      <img src="images/G2.png" alt="Гусеничная платформа G2" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Гусеничная платформа G3">
+      <img src="images/G3.png" alt="Гусеничная платформа G3" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
     </div>
     <div class="features">
       <h3>Особенности и системы безопасности</h3>
@@ -561,7 +900,7 @@ footer strong { color: white; }
       </ul>
     </div>
     <div class="btn-group">
-      <button class="btn" onclick="openModal('modal-sjt')">📋 Технические характеристики SJT06E–SJT12E</button>
+      <button class="btn" onclick="openModal('modal-sjt')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Технические характеристики SJT06E–SJT12E</button>
     </div>
   </div>
 </section>
@@ -577,10 +916,18 @@ footer strong { color: white; }
       </div>
     </div>
     <div class="gallery">
-      <img src="images/M1.png" alt="Мачтовый подъемник M1" loading="lazy">
-      <img src="images/M2.png" alt="Мачтовый подъемник M2" loading="lazy">
-      <img src="images/M3.png" alt="Мачтовый подъемник M3" loading="lazy">
-      <img src="images/M4.png" alt="Мачтовый подъемник M4" loading="lazy">
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Мачтовый подъемник M1">
+      <img src="images/M1.png" alt="Мачтовый подъемник M1" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Мачтовый подъемник M2">
+      <img src="images/M2.png" alt="Мачтовый подъемник M2" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Мачтовый подъемник M3">
+      <img src="images/M3.png" alt="Мачтовый подъемник M3" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Мачтовый подъемник M4">
+      <img src="images/M4.png" alt="Мачтовый подъемник M4" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
     </div>
     <div class="features">
       <h3>Особенности и системы безопасности</h3>
@@ -614,7 +961,7 @@ footer strong { color: white; }
       </ul>
     </div>
     <div class="btn-group">
-      <button class="btn" onclick="openModal('modal-mlt')">📋 Технические характеристики MLT 04–MLT 09</button>
+      <button class="btn" onclick="openModal('modal-mlt')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Технические характеристики MLT 04–MLT 09</button>
     </div>
   </div>
 </section>
@@ -630,10 +977,18 @@ footer strong { color: white; }
       </div>
     </div>
     <div class="gallery">
-      <img src="images/T1.jpg" alt="Трехколесная платформа T1" loading="lazy">
-      <img src="images/T2.jpg" alt="Трехколесная платформа T2" loading="lazy">
-      <img src="images/T3.jpg" alt="Трехколесная платформа T3" loading="lazy">
-      <img src="images/T4.jpg" alt="Трехколесная платформа T4" loading="lazy">
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Трехколесная платформа T1">
+      <img src="images/T1.jpg" alt="Трехколесная платформа T1" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Трехколесная платформа T2">
+      <img src="images/T2.jpg" alt="Трехколесная платформа T2" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Трехколесная платформа T3">
+      <img src="images/T3.jpg" alt="Трехколесная платформа T3" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Трехколесная платформа T4">
+      <img src="images/T4.jpg" alt="Трехколесная платформа T4" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
     </div>
     <div class="features">
       <h3>Особенности</h3>
@@ -650,7 +1005,7 @@ footer strong { color: white; }
       </ul>
     </div>
     <div class="btn-group">
-      <button class="btn" onclick="openModal('modal-sjtr')">📋 Технические характеристики SJTR06–SJTR12</button>
+      <button class="btn" onclick="openModal('modal-sjtr')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Технические характеристики SJTR06–SJTR12</button>
     </div>
   </div>
 </section>
@@ -666,10 +1021,18 @@ footer strong { color: white; }
       </div>
     </div>
     <div class="gallery">
-      <img src="images/L1.jpg" alt="Мини-погрузчик L1" loading="lazy">
-      <img src="images/L2.jpg" alt="Мини-погрузчик L2" loading="lazy">
-      <img src="images/L3.png" alt="Мини-погрузчик L3" loading="lazy">
-      <img src="images/L4.png" alt="Мини-погрузчик L4" loading="lazy">
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Мини-погрузчик L1">
+      <img src="images/L1.jpg" alt="Мини-погрузчик L1" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Мини-погрузчик L2">
+      <img src="images/L2.jpg" alt="Мини-погрузчик L2" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Мини-погрузчик L3">
+      <img src="images/L3.png" alt="Мини-погрузчик L3" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Мини-погрузчик L4">
+      <img src="images/L4.png" alt="Мини-погрузчик L4" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
     </div>
     <div class="features">
       <h3>Особенности</h3>
@@ -697,7 +1060,9 @@ footer strong { color: white; }
       </div>
     </div>
     <div class="gallery">
-      <img src="images/AB1.jpg" alt="Телескопический подъемник AB1" loading="lazy">
+      <figure class="shot" tabindex="0" role="button" aria-label="Открыть фото: Телескопический подъемник AB1">
+      <img src="images/AB1.jpg" alt="Телескопический подъемник AB1" loading="lazy" decoding="async"><span class="shot-zoom" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </figure>
     </div>
     <div class="features">
       <h3>Особенности и системы безопасности</h3>
@@ -717,47 +1082,78 @@ footer strong { color: white; }
       </ul>
     </div>
     <div class="btn-group">
-      <button class="btn" onclick="openModal('modal-ab16')">📋 Технические характеристики AB16 / AB18 / AB20</button>
-      <button class="btn btn-outline" onclick="openModal('modal-ab24')">📋 Технические характеристики AB24Li / AB26Li</button>
+      <button class="btn" onclick="openModal('modal-ab16')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Технические характеристики AB16 / AB18 / AB20</button>
+      <button class="btn btn-outline" onclick="openModal('modal-ab24')"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg> Технические характеристики AB24Li / AB26Li</button>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-
-
-<!-- ===== SEO EXPANSION: FAQ section (placed above footer) ===== -->
-<section style="max-width:1200px;margin:48px auto;padding:0 20px;font-family:inherit;color:inherit" id="faq">
-  <h2 style="font-size:1.8rem;margin-bottom:18px;color:#0a2540;border-bottom:3px solid #00d4aa;padding-bottom:10px">Часто задаваемые вопросы</h2>
-  <div style="display:grid;gap:10px">
+<!-- ===== FAQ ===== -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <span class="faq-kicker">FAQ</span>
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq-list">
     <details><summary><b>Какие модели подъёмных платформ Longqing доступны через ООО «ВИРА»?</b></summary><p>Мы поставляем семь линеек: коленчатые подъёмники TB16E/TB22E, самоходные ножничные платформы SJW3.5E–SJW14E, гусеничные ножничные платформы SJT06E–SJT12E, мачтовые подъёмники MLT 04–MLT 09, трёхколёсные платформы SJTR06–SJTR12, самоходные телескопические подъёмники AB16–AB26Li и электрические мини-погрузчики. Полный каталог — на сайте longqing.ru.</p></details>
 <details><summary><b>Какая сертификация у подъёмных платформ Longqing?</b></summary><p>Все платформы сертифицированы по стандартам CE, EAC (Таможенный союз), соответствуют EN 280 и ГОСТ 34443-2018 (ISO 16368:2010). Документы предоставляются при поставке. Дополнительно доступно оформление разрешения Ростехнадзора.</p></details>
 <details><summary><b>Какой срок гарантии и сервисного обслуживания?</b></summary><p>Гарантия — 18 месяцев с даты ввода в эксплуатацию. Низкая стоимость владения.</p></details>
 <details><summary><b>Какова стоимость доставки подъёмной платформы по России?</b></summary><p>Доставка осуществляется из Владивостока во все регионы РФ. Стоимость зависит от габаритов платформы и пункта назначения: для ножничных SJW6E–SJW14E по Дальнему Востоку — от 35 000 руб., до Москвы — от 180 000 руб. Точную стоимость рассчитаем после уточнения модели и адреса.</p></details>
 <details><summary><b>Подходят ли платформы Longqing для работы внутри складов?</b></summary><p>Да, все электрические модели SJW/SJT/MLT/SJTR имеют нулевой выброс, низкий уровень шума и малый радиус поворота. Бесследные шины доступны опционально — не оставляют следов на эпоксидных и полимерных полах.</p></details>
   </div>
-  <style>
-    #faq details { background:#fff;border:1px solid #e1e8ed;border-radius:8px;padding:14px 18px;transition:box-shadow .2s }
-    #faq details:hover { box-shadow:0 4px 16px rgba(10,37,64,.08) }
-    #faq details[open] { border-color:#00d4aa }
-    #faq summary { cursor:pointer;font-size:1.05rem;color:#0a2540;list-style:none;position:relative;padding-right:30px }
-    #faq summary::after { content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.4rem;color:#00d4aa;font-weight:300 }
-    #faq details[open] summary::after { content:"−" }
-    #faq summary::-webkit-details-marker { display:none }
-    #faq details p { margin:12px 0 0;color:#5a6a7a;line-height:1.7 }
-  </style>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="contacts">
+  <div class="container cta-inner">
+    <div>
+      <h2>Подберём оборудование под вашу задачу</h2>
+      <p>Расскажите об объекте и высоте работ — предложим подходящую модель, рассчитаем стоимость и доставку. Отгрузка во Владивостоке, отправка во все регионы России.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-accent" href="tel:+74232564721"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +7 (423) 256-47-21</a>
+      <a class="btn btn-ghost" href="mailto:virare@mail.ru?subject=Запрос%20из%20каталога%20Longqing"><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg> Написать на email</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <div class="container">
-    <p><strong>ООО "ВИРА"</strong> — официальный представитель Shandong Longqing Heavy Industry Co., Ltd.</p>
-    <p>Тел.: +7(423)256-47-21 &nbsp;|&nbsp; Email: virare@mail.ru</p>
-    <p style="margin-top: 12px; opacity: 0.6;">© 2026 Все права защищены.</p>
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span><strong>ООО «ВИРА»</strong></div>
+      <p>Официальный представитель Shandong Longqing Heavy Industry Co., Ltd. в России: поставка подъёмных платформ и мини-погрузчиков, сертификация CE/EAC, гарантийное и постгарантийное обслуживание, подбор техники под задачу.</p>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul class="footer-contact">
+        <li><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+74232564721">+7 (423) 256-47-21</a></li>
+        <li><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg><a href="mailto:virare@mail.ru">virare@mail.ru</a></li>
+        <li><svg class="ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Владивосток, Приморский край</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Каталог техники</h4>
+      <ul>
+        <li><a href="#sec01">01 — Коленчатые подъемники</a></li>
+        <li><a href="#sec02">02 — Ножничные платформы</a></li>
+        <li><a href="#sec03">03 — Гусеничные платформы</a></li>
+        <li><a href="#sec04">04 — Мачтовые подъемники</a></li>
+        <li><a href="#sec05">05 — Трехколесные платформы</a></li>
+        <li><a href="#sec06">06 — Мини-погрузчики</a></li>
+        <li><a href="#sec07">07 — Телескопические подъемники</a></li>
+        <li><a href="#faq">FAQ — частые вопросы</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 ООО «ВИРА» — официальный представитель Shandong Longqing Heavy Industry Co., Ltd. Все права защищены.</p>
+    </div>
   </div>
 </footer>
 
 <!-- Modals -->
-<div class="modal-overlay" id="modal-tb16" onclick="closeModalOnBackdrop(event, 'modal-tb16')">
+<div class="modal-overlay" id="modal-tb16" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-tb16')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — TB16E / TB16EP</h3>
@@ -767,7 +1163,7 @@ footer strong { color: white; }
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-tb11" onclick="closeModalOnBackdrop(event, 'modal-tb11')">
+<div class="modal-overlay" id="modal-tb11" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-tb11')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — TB11E, TB12E, TB14E, TB18E, TB20E, TB22E</h3>
@@ -777,7 +1173,7 @@ footer strong { color: white; }
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-sjw-small" onclick="closeModalOnBackdrop(event, 'modal-sjw-small')">
+<div class="modal-overlay" id="modal-sjw-small" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-sjw-small')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — SJW3.5E, SJW4.6E, SJW0606E</h3>
@@ -787,27 +1183,27 @@ footer strong { color: white; }
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-sjw-mid" onclick="closeModalOnBackdrop(event, 'modal-sjw-mid')">
+<div class="modal-overlay" id="modal-sjw-mid" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-sjw-mid')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — SJW06E, SJW8E, SJW08BE</h3>
       <button class="modal-close" onclick="closeModal('modal-sjw-mid')">&times;</button>
     </div>
-    <div class="modal-body"><div class="table-wrapper"><table class="spec-table"><caption>Модели SJW06E, SJW8E, SJW08BE</caption><thead><tr><th>Модель Model</th><th>SJW06E</th><th>SJW8E</th><th>SJW08BE</th></tr></thead><tbody><tr><td>Максимальная рабочая высота</td><td>8 м</td><td>10 м</td><td>10 м</td></tr><tr><td>Максимальная высота платформы</td><td>6 м</td><td>8 м</td><td>8 м</td></tr><tr><td>Безопасная рабочая нагрузка</td><td>450 кг</td><td>450 кг</td><td>320 кг</td></tr><tr><td>Безопасная рабочая нагрузка выдвижной платформы</td><td>110 кг</td><td>110 кг</td><td>110 кг</td></tr><tr><td>Размеры рабочей платформы (Д×Ш×В)</td><td>2,264×1,13×1,2 м</td><td>2,264×1,13×1,2 м</td><td>2,273×0,81×1,2 м</td></tr><tr><td>Общие размеры (Д×Ш×В / ограждение не сложено)</td><td>2,49×1,182×2,175 м</td><td>2,49×1,182×2,305 м</td><td>2,477×0,85×2,325 м</td></tr><tr><td>Общие размеры (Д×Ш×В / ограждение сложено)</td><td>2,49×1,182×1,65 м</td><td>2,49×1,182×1,78 м</td><td>2,477×0,85×1,846 м</td></tr><tr><td>Размер выдвижения платформы</td><td>0,9 м</td><td>0,9 м</td><td>0,9 м</td></tr><tr><td>Минимальный дорожный просвет (защита от ям / убрана)</td><td>0,1/0,02 м</td><td>0,1/0,02 м</td><td>0,1/0,02 м</td></tr><tr><td>Колесная база</td><td>1,90 м</td><td>1,90 м</td><td>1,90 м</td></tr><tr><td>Радиус поворота (внутреннее колесо)</td><td>0/2,35 м</td><td>0/2,35 м</td><td>0/2,35 м</td></tr><tr><td>Подъемный двигатель</td><td>24V/3,3 кВт</td><td>24V/3,3 кВт</td><td>24V/3,3 кВт</td></tr><tr><td>Ходовой двигатель в сборе</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Время подъема/опускания (сек)</td><td>35/40</td><td>35/40</td><td>31/40</td></tr><tr><td>Скорость движения машины (в сложенном состоянии)</td><td>3,5 км/ч</td><td>3,5 км/ч</td><td>3,5 км/ч</td></tr><tr><td>Скорость движения машины (в поднятом состоянии)</td><td>0,8 км/ч</td><td>0,8 км/ч</td><td>Нет</td></tr><tr><td>Аккумуляторная батарея</td><td>4×6V/200Ah</td><td>4×6V/200Ah</td><td>4×6V/200Ah</td></tr><tr><td>Зарядное устройство</td><td>24V/30A</td><td>24V/30A</td><td>24V/30A</td></tr><tr><td>Максимальная способность преодоления подъемов</td><td>25%</td><td>25%</td><td>25%</td></tr><tr><td>Максимально допустимый угол при работе</td><td>1,5°/3°</td><td>1,5°/3°</td><td>1,5°/3°</td></tr><tr><td>Шины</td><td>Φ381×127 мм</td><td>Φ381×127 мм</td><td>Φ381×127 мм</td></tr><tr><td>Общий вес машины</td><td>1930 кг</td><td>2090 кг</td><td>2108 кг</td></tr></tbody></table></div></div>
+    <div class="modal-body"><div class="table-wrapper"><table class="spec-table"><caption>Модели SJW06E, SJW8E, SJW08BE</caption><thead><tr><th>Модель</th><th>SJW06E</th><th>SJW8E</th><th>SJW08BE</th></tr></thead><tbody><tr><td>Максимальная рабочая высота</td><td>8 м</td><td>10 м</td><td>10 м</td></tr><tr><td>Максимальная высота платформы</td><td>6 м</td><td>8 м</td><td>8 м</td></tr><tr><td>Безопасная рабочая нагрузка</td><td>450 кг</td><td>450 кг</td><td>320 кг</td></tr><tr><td>Безопасная рабочая нагрузка выдвижной платформы</td><td>110 кг</td><td>110 кг</td><td>110 кг</td></tr><tr><td>Размеры рабочей платформы (Д×Ш×В)</td><td>2,264×1,13×1,2 м</td><td>2,264×1,13×1,2 м</td><td>2,273×0,81×1,2 м</td></tr><tr><td>Общие размеры (Д×Ш×В / ограждение не сложено)</td><td>2,49×1,182×2,175 м</td><td>2,49×1,182×2,305 м</td><td>2,477×0,85×2,325 м</td></tr><tr><td>Общие размеры (Д×Ш×В / ограждение сложено)</td><td>2,49×1,182×1,65 м</td><td>2,49×1,182×1,78 м</td><td>2,477×0,85×1,846 м</td></tr><tr><td>Размер выдвижения платформы</td><td>0,9 м</td><td>0,9 м</td><td>0,9 м</td></tr><tr><td>Минимальный дорожный просвет (защита от ям / убрана)</td><td>0,1/0,02 м</td><td>0,1/0,02 м</td><td>0,1/0,02 м</td></tr><tr><td>Колесная база</td><td>1,90 м</td><td>1,90 м</td><td>1,90 м</td></tr><tr><td>Радиус поворота (внутреннее колесо)</td><td>0/2,35 м</td><td>0/2,35 м</td><td>0/2,35 м</td></tr><tr><td>Подъемный двигатель</td><td>24V/3,3 кВт</td><td>24V/3,3 кВт</td><td>24V/3,3 кВт</td></tr><tr><td>Ходовой двигатель в сборе</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Время подъема/опускания (сек)</td><td>35/40</td><td>35/40</td><td>31/40</td></tr><tr><td>Скорость движения машины (в сложенном состоянии)</td><td>3,5 км/ч</td><td>3,5 км/ч</td><td>3,5 км/ч</td></tr><tr><td>Скорость движения машины (в поднятом состоянии)</td><td>0,8 км/ч</td><td>0,8 км/ч</td><td>Нет</td></tr><tr><td>Аккумуляторная батарея</td><td>4×6V/200Ah</td><td>4×6V/200Ah</td><td>4×6V/200Ah</td></tr><tr><td>Зарядное устройство</td><td>24V/30A</td><td>24V/30A</td><td>24V/30A</td></tr><tr><td>Максимальная способность преодоления подъемов</td><td>25%</td><td>25%</td><td>25%</td></tr><tr><td>Максимально допустимый угол при работе</td><td>1,5°/3°</td><td>1,5°/3°</td><td>1,5°/3°</td></tr><tr><td>Шины</td><td>Φ381×127 мм</td><td>Φ381×127 мм</td><td>Φ381×127 мм</td></tr><tr><td>Общий вес машины</td><td>1930 кг</td><td>2090 кг</td><td>2108 кг</td></tr></tbody></table></div></div>
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-sjw-large" onclick="closeModalOnBackdrop(event, 'modal-sjw-large')">
+<div class="modal-overlay" id="modal-sjw-large" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-sjw-large')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — SJW10E, SJW12E, SJW14E</h3>
       <button class="modal-close" onclick="closeModal('modal-sjw-large')">&times;</button>
     </div>
-    <div class="modal-body"><div class="table-wrapper"><table class="spec-table"><caption>Модели SJW10E, SJW12E, SJW14E</caption><thead><tr><th>Модель Model</th><th>SJW10E</th><th>SJW12E</th><th>SJW14E</th></tr></thead><tbody><tr><td>Максимальная рабочая высота</td><td>12 м</td><td>13,85 м</td><td>15,8 м</td></tr><tr><td>Максимальная высота платформы</td><td>10 м</td><td>11,85 м</td><td>13,8 м</td></tr><tr><td>Безопасная рабочая нагрузка</td><td>320 кг</td><td>320 кг</td><td>230 кг</td></tr><tr><td>Безопасная рабочая нагрузка выдвижной платформы</td><td>110 кг</td><td>110 кг</td><td>110 кг</td></tr><tr><td>Размеры рабочей платформы (Д×Ш×В)</td><td>2,264×1,13×1,2 м</td><td>2,264×1,13×1,2 м</td><td>2,636×1,13×1,2 м</td></tr><tr><td>Общие размеры (Д×Ш×В / ограждение не сложено)</td><td>2,49×1,182×2,435 м</td><td>2,49×1,182×2,565 м</td><td>2,85×1,405×2,58 м</td></tr><tr><td>Общие размеры (Д×Ш×В / ограждение сложено)</td><td>2,49×1,182×1,91 м</td><td>2,49×1,182×2,04 м</td><td>2,85×1,405×2,05 м</td></tr><tr><td>Размер выдвижения платформы</td><td>0,9 м</td><td>0,9 м</td><td>0,9 м</td></tr><tr><td>Минимальный дорожный просвет (защита от ям / убрана)</td><td>0,1/0,02 м</td><td>0,1/0,02 м</td><td>0,1/0,02 м</td></tr><tr><td>Колесная база</td><td>1,90 м</td><td>1,90 м</td><td>2,24 м</td></tr><tr><td>Радиус поворота (внутреннее колесо)</td><td>0/2,35 м</td><td>0/2,35 м</td><td>0/2,5 м</td></tr><tr><td>Подъемный двигатель</td><td>24V/4,5 кВт</td><td>24V/4,5 кВт</td><td>24V/4,5 кВт</td></tr><tr><td>Ходовой двигатель в сборе</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Время подъема/опускания (сек)</td><td>58/48</td><td>65/60</td><td>80/65</td></tr><tr><td>Скорость движения машины (в сложенном состоянии)</td><td>3,5 км/ч</td><td>3,5 км/ч</td><td>3,5 км/ч</td></tr><tr><td>Скорость движения машины (в поднятом состоянии)</td><td>0,8 км/ч</td><td>0,8 км/ч</td><td>0,8 км/ч</td></tr><tr><td>Аккумуляторная батарея</td><td>4×6V/200Ah</td><td>4×6V/200Ah</td><td>4×6V/225Ah</td></tr><tr><td>Зарядное устройство</td><td>24V/30A</td><td>24V/30A</td><td>24V/30A</td></tr><tr><td>Максимальная способность преодоления подъемов</td><td>25%</td><td>25%</td><td>25%</td></tr><tr><td>Максимально допустимый угол при работе</td><td>1,5°/3°</td><td>1,5°/3°</td><td>1,5°/3°</td></tr><tr><td>Шины</td><td>Φ381×127 мм</td><td>Φ381×127 мм</td><td>Φ381×127 мм</td></tr><tr><td>Общий вес машины</td><td>2400 кг</td><td>2850 кг</td><td>3616 кг</td></tr></tbody></table></div></div>
+    <div class="modal-body"><div class="table-wrapper"><table class="spec-table"><caption>Модели SJW10E, SJW12E, SJW14E</caption><thead><tr><th>Модель</th><th>SJW10E</th><th>SJW12E</th><th>SJW14E</th></tr></thead><tbody><tr><td>Максимальная рабочая высота</td><td>12 м</td><td>13,85 м</td><td>15,8 м</td></tr><tr><td>Максимальная высота платформы</td><td>10 м</td><td>11,85 м</td><td>13,8 м</td></tr><tr><td>Безопасная рабочая нагрузка</td><td>320 кг</td><td>320 кг</td><td>230 кг</td></tr><tr><td>Безопасная рабочая нагрузка выдвижной платформы</td><td>110 кг</td><td>110 кг</td><td>110 кг</td></tr><tr><td>Размеры рабочей платформы (Д×Ш×В)</td><td>2,264×1,13×1,2 м</td><td>2,264×1,13×1,2 м</td><td>2,636×1,13×1,2 м</td></tr><tr><td>Общие размеры (Д×Ш×В / ограждение не сложено)</td><td>2,49×1,182×2,435 м</td><td>2,49×1,182×2,565 м</td><td>2,85×1,405×2,58 м</td></tr><tr><td>Общие размеры (Д×Ш×В / ограждение сложено)</td><td>2,49×1,182×1,91 м</td><td>2,49×1,182×2,04 м</td><td>2,85×1,405×2,05 м</td></tr><tr><td>Размер выдвижения платформы</td><td>0,9 м</td><td>0,9 м</td><td>0,9 м</td></tr><tr><td>Минимальный дорожный просвет (защита от ям / убрана)</td><td>0,1/0,02 м</td><td>0,1/0,02 м</td><td>0,1/0,02 м</td></tr><tr><td>Колесная база</td><td>1,90 м</td><td>1,90 м</td><td>2,24 м</td></tr><tr><td>Радиус поворота (внутреннее колесо)</td><td>0/2,35 м</td><td>0/2,35 м</td><td>0/2,5 м</td></tr><tr><td>Подъемный двигатель</td><td>24V/4,5 кВт</td><td>24V/4,5 кВт</td><td>24V/4,5 кВт</td></tr><tr><td>Ходовой двигатель в сборе</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Время подъема/опускания (сек)</td><td>58/48</td><td>65/60</td><td>80/65</td></tr><tr><td>Скорость движения машины (в сложенном состоянии)</td><td>3,5 км/ч</td><td>3,5 км/ч</td><td>3,5 км/ч</td></tr><tr><td>Скорость движения машины (в поднятом состоянии)</td><td>0,8 км/ч</td><td>0,8 км/ч</td><td>0,8 км/ч</td></tr><tr><td>Аккумуляторная батарея</td><td>4×6V/200Ah</td><td>4×6V/200Ah</td><td>4×6V/225Ah</td></tr><tr><td>Зарядное устройство</td><td>24V/30A</td><td>24V/30A</td><td>24V/30A</td></tr><tr><td>Максимальная способность преодоления подъемов</td><td>25%</td><td>25%</td><td>25%</td></tr><tr><td>Максимально допустимый угол при работе</td><td>1,5°/3°</td><td>1,5°/3°</td><td>1,5°/3°</td></tr><tr><td>Шины</td><td>Φ381×127 мм</td><td>Φ381×127 мм</td><td>Φ381×127 мм</td></tr><tr><td>Общий вес машины</td><td>2400 кг</td><td>2850 кг</td><td>3616 кг</td></tr></tbody></table></div></div>
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-sjt" onclick="closeModalOnBackdrop(event, 'modal-sjt')">
+<div class="modal-overlay" id="modal-sjt" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-sjt')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — SJT06E, SJT08E, SJT10E, SJT12E</h3>
@@ -817,7 +1213,7 @@ footer strong { color: white; }
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-mlt" onclick="closeModalOnBackdrop(event, 'modal-mlt')">
+<div class="modal-overlay" id="modal-mlt" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-mlt')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — MLT 04, MLT 05, MLT 06, MLT 09</h3>
@@ -827,17 +1223,17 @@ footer strong { color: white; }
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-sjtr" onclick="closeModalOnBackdrop(event, 'modal-sjtr')">
+<div class="modal-overlay" id="modal-sjtr" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-sjtr')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — SJTR06, SJTR08, SJTR10, SJTR11.8, SJTR12</h3>
       <button class="modal-close" onclick="closeModal('modal-sjtr')">&times;</button>
     </div>
-    <div class="modal-body"><div class="table-wrapper"><table class="spec-table"><caption>Модели SJTR06, SJTR08, SJTR10, SJTR11.8, SJTR12</caption><thead><tr><th>Модель Model</th><th>SJTR06</th><th>SJTR08</th><th>SJTR10</th><th>SJTR11.8</th><th>SJTR12</th></tr></thead><tbody><tr><td>Максимальная высота подъема</td><td>6 м</td><td>8 м</td><td>10 м</td><td>11,8 м</td><td>12 м</td></tr><tr><td>Размер платформы</td><td>2060×1000 мм</td><td>2060×1000 мм</td><td>2060×1000 мм</td><td>2070×1000 мм</td><td>2300×1140 мм</td></tr><tr><td>Выдвижная платформа</td><td>800 мм</td><td>800 мм</td><td>800 мм</td><td>800 мм</td><td>900 мм</td></tr><tr><td>Грузоподъемность выдвижной платформы</td><td>100 кг</td><td>100 кг</td><td>100 кг</td><td>100 кг</td><td>100 кг</td></tr><tr><td>Размер рамы</td><td>60×120×2,75 мм</td><td>60×120×2,75 мм</td><td>60×120×2,75 мм</td><td>60×120×2,75 мм</td><td>60×120×2,75 мм</td></tr><tr><td>Размер рамы из квадратной трубы</td><td>2050×1080 мм</td><td>2050×1080 мм</td><td>2050×1080 мм</td><td>2050×1080 мм</td><td>2300×1090 мм</td></tr><tr><td>Номинальная грузоподъемность</td><td>300 кг</td><td>300 кг</td><td>300 кг</td><td>300 кг</td><td>500 кг</td></tr><tr><td>Общие размеры (размер со сложенным ограждением)</td><td>3700×1400×1900 мм</td><td>3700×1400×2020 мм</td><td>3700×1400×2140 мм</td><td>3700×1400×2300 мм</td><td>3920×1580×2100 мм</td></tr><tr><td>Вес оборудования</td><td>1500 кг</td><td>1600 кг</td><td>1800 кг</td><td>1900 кг</td><td>2230 кг</td></tr><tr><td>Скорость подъема</td><td>4-6 м/мин</td><td>4-6 м/мин</td><td>4-6 м/мин</td><td>4-6 м/мин</td><td>4-6 м/мин</td></tr><tr><td>Аккумулятор</td><td>12V80Ah × 5 шт.</td><td>12V80Ah × 5 шт.</td><td>12V80Ah × 5 шт.</td><td>12V80Ah × 5 шт.</td><td>12V103Ah × 6 шт.</td></tr><tr><td>Шины</td><td>500-12 пневматические</td><td>500-12 пневматические</td><td>500-12 пневматические</td><td>500-12 пневматические</td><td>Передние 500-12 Задние 550-13 пневматические</td></tr></tbody></table></div></div>
+    <div class="modal-body"><div class="table-wrapper"><table class="spec-table"><caption>Модели SJTR06, SJTR08, SJTR10, SJTR11.8, SJTR12</caption><thead><tr><th>Модель</th><th>SJTR06</th><th>SJTR08</th><th>SJTR10</th><th>SJTR11.8</th><th>SJTR12</th></tr></thead><tbody><tr><td>Максимальная высота подъема</td><td>6 м</td><td>8 м</td><td>10 м</td><td>11,8 м</td><td>12 м</td></tr><tr><td>Размер платформы</td><td>2060×1000 мм</td><td>2060×1000 мм</td><td>2060×1000 мм</td><td>2070×1000 мм</td><td>2300×1140 мм</td></tr><tr><td>Выдвижная платформа</td><td>800 мм</td><td>800 мм</td><td>800 мм</td><td>800 мм</td><td>900 мм</td></tr><tr><td>Грузоподъемность выдвижной платформы</td><td>100 кг</td><td>100 кг</td><td>100 кг</td><td>100 кг</td><td>100 кг</td></tr><tr><td>Размер рамы</td><td>60×120×2,75 мм</td><td>60×120×2,75 мм</td><td>60×120×2,75 мм</td><td>60×120×2,75 мм</td><td>60×120×2,75 мм</td></tr><tr><td>Размер рамы из квадратной трубы</td><td>2050×1080 мм</td><td>2050×1080 мм</td><td>2050×1080 мм</td><td>2050×1080 мм</td><td>2300×1090 мм</td></tr><tr><td>Номинальная грузоподъемность</td><td>300 кг</td><td>300 кг</td><td>300 кг</td><td>300 кг</td><td>500 кг</td></tr><tr><td>Общие размеры (размер со сложенным ограждением)</td><td>3700×1400×1900 мм</td><td>3700×1400×2020 мм</td><td>3700×1400×2140 мм</td><td>3700×1400×2300 мм</td><td>3920×1580×2100 мм</td></tr><tr><td>Вес оборудования</td><td>1500 кг</td><td>1600 кг</td><td>1800 кг</td><td>1900 кг</td><td>2230 кг</td></tr><tr><td>Скорость подъема</td><td>4-6 м/мин</td><td>4-6 м/мин</td><td>4-6 м/мин</td><td>4-6 м/мин</td><td>4-6 м/мин</td></tr><tr><td>Аккумулятор</td><td>12V80Ah × 5 шт.</td><td>12V80Ah × 5 шт.</td><td>12V80Ah × 5 шт.</td><td>12V80Ah × 5 шт.</td><td>12V103Ah × 6 шт.</td></tr><tr><td>Шины</td><td>500-12 пневматические</td><td>500-12 пневматические</td><td>500-12 пневматические</td><td>500-12 пневматические</td><td>Передние 500-12 Задние 550-13 пневматические</td></tr></tbody></table></div></div>
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-ab16" onclick="closeModalOnBackdrop(event, 'modal-ab16')">
+<div class="modal-overlay" id="modal-ab16" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-ab16')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — AB16, AB18, AB20</h3>
@@ -847,7 +1243,7 @@ footer strong { color: white; }
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-ab24" onclick="closeModalOnBackdrop(event, 'modal-ab24')">
+<div class="modal-overlay" id="modal-ab24" role="dialog" aria-modal="true" aria-label="Технические характеристики" onclick="closeModalOnBackdrop(event, 'modal-ab24')">
   <div class="modal">
     <div class="modal-header">
       <h3>Технические характеристики — AB24Li, AB26Li</h3>
@@ -894,6 +1290,142 @@ window.addEventListener('scroll', () => {
     if (link.getAttribute('href') === '#' + current) link.classList.add('active');
   });
 });
+</script>
+
+
+<!-- Back to top -->
+<button class="to-top" id="toTop" aria-label="Наверх" title="Наверх"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии">
+  <button class="lb-close" aria-label="Закрыть просмотр">&times;</button>
+  <button class="lb-btn lb-prev" aria-label="Предыдущее фото"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+  <figure class="lb-figure">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" aria-label="Следующее фото"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  <div class="lb-counter" id="lbCount" aria-live="polite"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Scroll progress, nav shadow, back-to-top */
+  var nav = document.querySelector('nav');
+  var progress = document.querySelector('.nav-progress');
+  var toTop = document.getElementById('toTop');
+  function onScroll() {
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (progress) progress.style.width = (h > 0 ? (st / h) * 100 : 0) + '%';
+    if (nav) nav.classList.toggle('scrolled', st > 10);
+    if (nav) nav.classList.toggle('condensed', st > 260);
+    if (toTop) toTop.classList.toggle('show', st > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Category row overflow: fade hint on the right edge */
+  var navBox = document.querySelector('.nav-container');
+  function updateNavOverflow() {
+    if (!navBox) return;
+    var can = navBox.scrollWidth > navBox.clientWidth + 1;
+    navBox.classList.toggle('can-scroll', can);
+    navBox.classList.toggle('at-end', can && navBox.scrollLeft + navBox.clientWidth >= navBox.scrollWidth - 2);
+  }
+  window.addEventListener('resize', updateNavOverflow);
+  if (navBox) navBox.addEventListener('scroll', updateNavOverflow, { passive: true });
+  updateNavOverflow();
+  if (toTop) toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* Reveal on scroll */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealEls = document.querySelectorAll('.section .container, .faq-section .container, #contacts .container');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    revealEls.forEach(function (el) {
+      el.classList.add('js-reveal');
+      io.observe(el);
+    });
+  }
+
+  /* Modal focus management (wrap original handlers) */
+  var lastFocus = null;
+  var _open = window.openModal, _close = window.closeModal;
+  window.openModal = function (id) {
+    lastFocus = document.activeElement;
+    _open(id);
+    var m = document.getElementById(id);
+    var btn = m && m.querySelector('.modal-close');
+    if (btn) btn.focus();
+  };
+  window.closeModal = function (id) {
+    _close(id);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !document.querySelector('.modal-overlay.active') && lastFocus) {
+      lastFocus.focus();
+      lastFocus = null;
+    }
+  });
+
+  /* Lightbox */
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.shot img'));
+  var lb = document.getElementById('lightbox');
+  if (lb && shots.length) {
+    var lbImg = document.getElementById('lbImg');
+    var lbCap = document.getElementById('lbCap');
+    var lbCount = document.getElementById('lbCount');
+    var cur = 0;
+    function show(i) {
+      cur = (i + shots.length) % shots.length;
+      var im = shots[cur];
+      lbImg.src = im.src;
+      lbImg.alt = im.alt;
+      lbCap.textContent = im.alt;
+      lbCount.textContent = (cur + 1) + ' / ' + shots.length;
+    }
+    function openLb(i) {
+      show(i);
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    shots.forEach(function (im, i) {
+      var fig = im.parentElement;
+      fig.addEventListener('click', function () { openLb(i); });
+      fig.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(i); }
+      });
+    });
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb || e.target.classList.contains('lb-figure')) closeLb();
+    });
+    lb.querySelector('.lb-close').addEventListener('click', closeLb);
+    lb.querySelector('.lb-prev').addEventListener('click', function () { show(cur - 1); });
+    lb.querySelector('.lb-next').addEventListener('click', function () { show(cur + 1); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowLeft') show(cur - 1);
+      if (e.key === 'ArrowRight') show(cur + 1);
+    });
+  }
+})();
 </script>
 
 </body>
