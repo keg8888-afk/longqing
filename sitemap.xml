@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://longqing.ru/index.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://longqing.ru/podemniki-kolenchatye.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://longqing.ru/platformy-nozhnichnye.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://longqing.ru/platformy-gusenichnye.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://longqing.ru/podemniki-machtovye.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://longqing.ru/platformy-trekhkolesnye.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://longqing.ru/mini-pogruzchiki.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://longqing.ru/podemniki-teleskopicheskie.html</loc><lastmod>2026-09-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://longqing.ru/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://longqing.ru/images/K1.png</image:loc>
+      <image:title>Коленчатый подъёмник Longqing TB16E / TB22E</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://longqing.ru/images/S1.jpg</image:loc>
+      <image:title>Самоходная ножничная подъёмная платформа Longqing SJW</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://longqing.ru/images/G1.png</image:loc>
+      <image:title>Гусеничная ножничная подъёмная платформа Longqing SJT</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://longqing.ru/images/M1.png</image:loc>
+      <image:title>Самоходный вертикальный мачтовый подъёмник Longqing MLT</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://longqing.ru/images/T1.jpg</image:loc>
+      <image:title>Трёхколёсная подъёмная платформа Longqing SJTR</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://longqing.ru/images/L1.jpg</image:loc>
+      <image:title>Электрический мини-погрузчик Longqing SW36E / SW36EP с бортовым поворотом</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://longqing.ru/images/AB1.jpg</image:loc>
+      <image:title>Самоходный телескопический подъёмник Longqing AB16–AB26Li</image:title>
+    </image:image>
+  </url>
 </urlset>

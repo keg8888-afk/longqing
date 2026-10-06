@@ -1,18 +1,5 @@
-# robots.txt для https://longqing.ru/
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /cgi-bin/
-
-User-agent: Yandex
-Allow: /
-Disallow: /admin/
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&gclid&yclid&fbclid
-
-User-agent: Googlebot
-Allow: /
-Disallow: /admin/
+Disallow: /404.html
 
 Sitemap: https://longqing.ru/sitemap.xml
-Host: longqing.ru
-Crawl-delay: 1
