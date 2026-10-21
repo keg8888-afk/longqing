@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  ПАКЕТ JSON-LD РАЗМЕТКИ ДЛЯ LONGQING.RU — готовый код для внедрения
+  ============================================================================
+  КАК ИСПОЛЬЗОВАТЬ:
+  1) Блоки вставляются в <head> (или перед </body>) соответствующих страниц.
+  2) Значения в двойных квадратных скобках [[...]] заменить на реальные данные.
+  3) После вставки проверить каждую страницу:
+     - https://search.google.com/test/rich-results
+     - https://webmaster.yandex.ru/tools/microtest/
+  4) FAQPage допустим только на страницах, где вопросы ВИДНЫ пользователю
+     (синхронность FAQ-блока и разметки — требование Яндекса и Google).
+  5) Block 1 (Organization+LocalBusiness) и Block 2 (WebSite) — на главной.
+     Block 3 (Product) — по одному на страницу линейки для 2-3 флагманов.
+     Block 4 (FAQPage) — на страницах с FAQ. Block 5 (BreadcrumbList) — на
+     каждой внутренней странице.
+  ============================================================================
+-->
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>longqing.ru — JSON-LD пакет внедрения</title>
+
+<!-- ============ BLOCK 1. Organization + LocalBusiness (главная) ============
+     Усиление текущей разметки: добавлены hasCredential (CE, ЕАС, ГОСТ),
+     geo, openingHoursSpecification, sameAs. Точку on GeoCoordinates заменить
+     на координаты офиса/склада ООО «ВИРА». -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "@id": "https://longqing.ru/#organization",
+  "name": "ООО «ВИРА»",
+  "alternateName": "Официальный каталог Longqing в России",
+  "url": "https://longqing.ru/",
+  "description": "Официальное представительство Shandong Longqing Heavy Industry Co., Ltd. в России: продажа самоходных подъёмников (ножничных, коленчатых, телескопических, мачтовых, гусеничных) и мини-погрузчиков. 7 линеек, 37 моделей, гарантия 18 месяцев, доставка из Владивостока по всей России.",
+  "telephone": "+7 (423) 256-47-21",
+  "email": "virare@mail.ru",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Владивосток",
+    "addressRegion": "Приморский край",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "[[43.1155]]",
+    "longitude": "[[131.8855]]"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "[[https://longqinglift.com]]",
+    "[[https://dzen.ru/longqing]]",
+    "[[https://www.youtube.com/@longqing]]"
+  ],
+  "sellsProductsOf": {
+    "@type": "Organization",
+    "name": "Shandong Longqing Heavy Industry Co., Ltd.",
+    "url": "https://longqinglift.com"
+  },
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Сертификат CE (Европейский союз)" },
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Сертификат соответствия ЕАС (Таможенный союз)" },
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "standard", "name": "Соответствие ГОСТ 34443-2018 (аналог EN 280)" }
+  ]
+}
+</script>
+
+<!-- ============ BLOCK 2. WebSite (главная) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://longqing.ru/#website",
+  "url": "https://longqing.ru/",
+  "name": "Каталог продукции Longqing — подъёмные платформы и мини-погрузчики",
+  "inLanguage": "ru-RU",
+  "publisher": { "@id": "https://longqing.ru/#organization" }
+}
+</script>
+
+<!-- ============ BLOCK 3. Product с offers (страницы линеек) ============
+     Пример заполнен для SJW8E (страница /nozhnichnye-podemniki/).
+     Для остальных моделей скопировать блок и заменить значения.
+     ВАЖНО: priceSpecified — ОРИЕНТИР. Если цена окончательно не публикуется,
+     используйте PriceSpecification с minPrice и комментарий
+     "цена зависит от комплектации" в description. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Самоходный ножничный подъёмник Longqing SJW8E",
+  "sku": "[[SJW8E]]",
+  "brand": { "@type": "Brand", "name": "Longqing" },
+  "manufacturer": { "@type": "Organization", "name": "Shandong Longqing Heavy Industry Co., Ltd.", "url": "https://longqinglift.com" },
+  "description": "Самоходный ножничный подъёмник с рабочей высотой 10 м и грузоподъёмностью [[230 кг]]. Электрический привод, тяговая АКБ [[96 В / 217 Ач]], немаркие опорные колёса, датчик перегруза и аварийный спуск. Для складов, цехов и монтажных работ на ровных площадках. Сертификат ЕАС, гарантия 18 месяцев, доставка из Владивостока.",
+  "url": "https://longqing.ru/nozhnichnye-podemniki/#sjw8e",
+  "image": "https://longqing.ru/[[images/sjw8e.jpg]]",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "RUB",
+    "lowPrice": "[[690000]]",
+    "highPrice": "[[1150000]]",
+    "offerCount": "[[11]]",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@id": "https://longqing.ru/#organization" },
+    "priceValidUntil": "2027-03-31",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "RU" },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 5, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 7, "maxValue": 35, "unitCode": "DAY" }
+      }
+    }
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Рабочая высота", "value": "10 м" },
+    { "@type": "PropertyValue", "name": "Высота платформы", "value": "[[8 м]]" },
+    { "@type": "PropertyValue", "name": "Грузоподъёмность", "value": "[[230 кг]]" },
+    { "@type": "PropertyValue", "name": "Питание", "value": "АКБ [[96 В / 217 Ач]]" },
+    { "@type": "PropertyValue", "name": "Сертификация", "value": "ЕАС, CE, ГОСТ 34443-2018" },
+    { "@type": "PropertyValue", "name": "Гарантия", "value": "18 месяцев" }
+  ]
+}
+</script>
+
+<!-- ============ BLOCK 4. FAQPage (страницы с видимым FAQ) ============
+     Пример для страницы /dostavka-i-garantija/ — 6 вопросов.
+     Тексты должны 1:1 совпадать с видимым FAQ-блоком страницы. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "url": "https://longqing.ru/dostavka-i-garantija/",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько идёт доставка подъёмника из Владивостока в мой регион?",
+      "acceptedAnswer": { "@type": "Answer", "text": "По Дальнему Востоку — от 7 дней, в центральную Россию — 3–5 недель в зависимости от расписания фур. Точный срок фиксируется в договоре; отгрузка со склада во Владивостоке после оплаты." }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоит доставка подъёмника?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ориентиры для ножничных серий SJW6E–SJW14E: Дальний Восток — от 35 000 руб., Москва — от 180 000 руб. Точная стоимость зависит от модели и адреса доставки, рассчитывается за один рабочий день." }
+    },
+    {
+      "@type": "Question",
+      "name": "Какая гарантия на подъёмники Longqing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Гарантия 18 месяцев на всю технику. Склад ЗИП во Владивостоке, сервис-партнёры в регионах, поддержка 24/7. По запросу — авиадоставка запчастей с завода." }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие документы поставляются с техникой?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Паспорт изделия, сертификат соответствия ЕАС, инструкция на русском языке, сервисный мануал и схемы узлов. Техника соответствует ГОСТ 34443-2018 (аналог EN 280) и сертифицирована CE." }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужно ли регистрировать подъёмник в Ростехнадзоре?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Подъёмники для подъёма людей подлежат учёту как грузоподъёмные механизмы. Поставщик предоставляет паспорт и сертификат ЕАС, необходимые для оформления; процедура зависит от типа машины и региона." }
+    },
+    {
+      "@type": "Question",
+      "name": "Есть ли подъёмники в наличии и как оформить заказ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Популярные модели ножничных и мачтовых серий доступны со склада во Владивостоке. Заказ оформляется через форму подбора на сайте или по телефону +7 (423) 256-47-21; счёт выставляется в течение одного рабочего дня." }
+    }
+  ]
+}
+</script>
+
+<!-- ============ BLOCK 5. BreadcrumbList (каждая внутренняя страница) ============
+     Пример для страницы линейки ножничных подъёмников. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://longqing.ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Каталог", "item": "https://longqing.ru/#catalog" },
+    { "@type": "ListItem", "position": 3, "name": "Ножничные подъёмники", "item": "https://longqing.ru/nozhnichnye-podemniki/" }
+  ]
+}
+</script>
+
+</head>
+<body>
+<p>Пакет разметки longqing.ru. Пять блоков: Organization+LocalBusiness, WebSite, Product+offers, FAQPage, BreadcrumbList. Инструкции по вставке — в комментарии в начале файла.</p>
+</body>
+</html>
